@@ -21,7 +21,7 @@ This course is therefore designed to meet a growing demand for reproducible, ope
 analytically thorough, and well-documented science. Students will learn to develop ecological population models, 
 analyze large datasets, and document their research using the R programming language. No prior programming experience is required.
 
-For more detail on the course, check out the [syllabus](https://uoftcoders.github.io/rcourse/).
+For more detail on the course, check out the [syllabus](https://jhollist.github.io/rcourse/).
 
 ## Instructional Design
 
