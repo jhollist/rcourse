@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>README.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link rel="icon" type="image/png" href="image/favicon.png">
+<style type="text/css">
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    border-top: solid #DCDCDC;
+    border-bottom: solid #DCDCDC;
+}
+
+tr.odd {
+    background-color: #F8F8F8;
+}
+
+tr:last-child {
+    border-bottom: solid #DCDCDC;
+}
+
+</style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">EEB313H1</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-map-o"></span>
+     
+    Syllabus
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-book"></span>
+     
+    Lectures
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="lec01-introduction.html">Sept. 6: Intro to course, programming, RStudio, and R Markdown</a>
+    </li>
+    <li>
+      <a href="lec02-basic-r.html">Sept. 11: Assignment, vectors, functions</a>
+    </li>
+    <li>
+      <a href="lec03-basic-r.html">Sept. 13: Data frames, intro to dplyr</a>
+    </li>
+    <li>
+      <a href="lec04-dplyr.html">Sept. 18: Data wrangling in dplyr, ggplot, tidy data</a>
+    </li>
+    <li>
+      <a href="lec05-dplyr.html">Sept. 20: More dplyr and ggplot</a>
+    </li>
+    <li>
+      <a href="lec06-exploratory-data-analysis.html">Sept. 25: Exploratory data analysis</a>
+    </li>
+    <li>
+      <a href="lec07-linear-modelling.html">Sept. 27: Linear models and statistical modelling</a>
+    </li>
+    <li>
+      <a href="lec08-linear-mixed-effects-models.html">Oct. 02: Mixed effects models</a>
+    </li>
+    <li>
+      <a href="lec09-Randomization-tests.html">Oct. 04: Simulating data: Randomization tests</a>
+    </li>
+    <li>
+      <a href="lec10-multivariate-stats.html">Oct. 09: Multivariate stats</a>
+    </li>
+    <li>
+      <a href="lec11-model-selection.html">Oct. 11: Model selection</a>
+    </li>
+    <li>
+      <a href="lec12-numerical-models.html">Oct. 16: Numerically solving population models</a>
+    </li>
+    <li>
+      <a href="lec13-time-series.html">Oct. 18: Time series analysis</a>
+    </li>
+    <li>
+      <a href="lec14-datasets.html">Oct. 23: Datasets, hypothesis, begin projects</a>
+    </li>
+    <li>
+      <a href="lec15-git-projects.html">Oct. 25: Reproducible science</a>
+    </li>
+    <li>
+      <a href="lec16-rmarkdown.html">Oct. 30: Reproducible science</a>
+    </li>
+    <li class="dropdown-header">Nov. 01: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 13: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 15: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 20: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 22: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 27: Project work (no lesson)</li>
+    <li class="dropdown-header">Nov. 29: Project work (no lesson)</li>
+    <li class="dropdown-header">Dec. 04: Project work (no lesson)</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-book"></span>
+     
+    Assignments
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="assignment-01.html">Assignment 1</a>
+    </li>
+    <li>
+      <a href="assignment-02.html">Assignment 2</a>
+    </li>
+    <li>
+      <a href="assignment-03.html">Assignment 3</a>
+    </li>
+    <li>
+      <a href="assignment-04.html">Assignment 4</a>
+    </li>
+    <li>
+      <a href="assignment-05.html">Assignment 5</a>
+    </li>
+    <li>
+      <a href="assignment-06.html">Assignment 6</a>
+    </li>
+    <li>
+      <a href="assignment-07.html">Assignment 7</a>
+    </li>
+    <li>
+      <a href="assignment-08.html">Assignment 8</a>
+    </li>
+    <li>
+      <a href="assignment-final.html">Final project</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fa fa-question"></span>
+     
+    Resources and FAQ
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-bars"></span>
+     
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mailto:ahmed.hasan@mail.utoronto.ca">
+        <span class="fa fa-envelope"></span>
+         
+        Contact
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/uoftcoders/rcourse">
+        <span class="fa fa-github"></span>
+         
+        GitHub
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="quantitative-methods-in-r-for-biology" class="section level1">
+<h1>Quantitative Methods in R for Biology</h1>
+<div id="course-in-ecology-and-evolutionary-biology" class="section level2">
+<h2>Course in Ecology and Evolutionary Biology</h2>
+<p><a href="https://travis-ci.org/UofTCoders/rcourse"><img src="https://travis-ci.org/UofTCoders/rcourse.svg?branch=master" alt="Build Status" /></a> <a href="https://zenodo.org/badge/latestdoi/97400494"><img src="https://zenodo.org/badge/97400494.svg" alt="DOI" /></a> <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="License: CC BY 4.0" /></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a> <a href="http://jose.theoj.org/papers/1a083e69c49c15011f9404dfab9b1ec8"><img src="http://jose.theoj.org/papers/1a083e69c49c15011f9404dfab9b1ec8/status.svg" alt="status" /></a></p>
+</div>
+<div id="description" class="section level2">
+<h2>Description</h2>
+<p>Quantitative Methods in R for Biology is a course aimed at undergraduates at a third year level or above. The course covers statistics and data analysis for ecology and reproducible quantitative methods in R.</p>
+<p>Statistical analysis, modelling, and data simulation are essential skills for ecologists and evolutionary biologists. Furthermore, ever larger datasets are quickly becoming the norm in a variety of scientific disciplines. This course is therefore designed to meet a growing demand for reproducible, openly accessible, analytically thorough, and well-documented science. Students will learn to develop ecological population models, analyze large datasets, and document their research using the R programming language. No prior programming experience is required.</p>
+<p>For more detail on the course, check out the <a href="https://jhollist.github.io/rcourse/">syllabus</a>.</p>
+</div>
+<div id="instructional-design" class="section level2">
+<h2>Instructional Design</h2>
+<p>The lectures in this course are designed to be presented using a participatory live-coding approach. This involves an instructor typing and running code in <a href="https://www.rstudio.com/">RStudio</a> in front of the class, while the class follows along using their own computers. Challenges are interspersed in the lesson material, allowing students to collaboratively work on smaller coding problems for a few minutes. All lesson materials are provided ahead of time on the course website for students to refer to during lectures.</p>
+<p>The bulk of the course’s assessment structure involves weekly assignments. These assignments are primarily code-based and are designed to also be completed in RStudio using the R Markdown format.</p>
+<p>At the end of the course, students undertake a group project, wherein they attempt to address a scientific question by applying techniques learned over the course to open ecological data. At the end of the semester, groups present their work in a conference-style presentation, and submit a report in the style of a scientific paper.</p>
+</div>
+<div id="lecture-content" class="section level2">
+<h2>Lecture Content</h2>
+<p>The course’s lesson material is broadly subdivided into three main topics:</p>
+<ol style="list-style-type: decimal">
+<li>Introductory R (Lectures 1-5)
+<ul>
+<li>Introduces students to the R programming language, with a focus on data wrangling and visualization.</li>
+</ul></li>
+<li>Statistical analysis (Lectures 6-12)
+<ul>
+<li>Introduces concepts such as regression, principal component analysis, statistical models, and numerical models.</li>
+</ul></li>
+<li>Reproducible science (Lectures 13-15)
+<ul>
+<li>Prepares students for project work period and introduces methods for reproducible science (GitHub, R Markdown).</li>
+</ul></li>
+</ol>
+<p>If you are interested in contributing to the course material, please refer to the guidelines in <a href="https://github.com/UofTCoders/rcourse/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+<p>If you are interested in using or modifying this content and repository for your own course, you’ll need to make a change to the Travis CI setup so you can host the website on your own account. Check out the documentation on the <a href="https://bookdown.org/yihui/bookdown/github.html">R Markdown online book</a>. Here is a brief excerpt taken from the book:</p>
+<ol style="list-style-type: decimal">
+<li>Create a <a href="http://bit.ly/2cEBYWB">personal access token</a> for your account on GitHub (make sure to enable the “repo” scope so that using this token will enable writing to your GitHub repos).</li>
+<li>Encrypt it in the environment variable <code>GITHUB_PAT</code> via command line <code>travis encrypt</code> and store it in <code>.travis.yml</code>, e.g <code>travis encrypt GITHUB_PAT=TOKEN</code>. If you do not know how to install or use the Travis command-line tool, simply save this environment variable via <a href="https://travis-ci.org/user/repo/settings" class="uri">https://travis-ci.org/user/repo/settings</a> where <code>user</code> is your GitHub ID, and <code>repo</code> is the name of the repository.</li>
+<li>You can clone this <code>gh-pages</code> branch on Travis using your GitHub token, add the HTML output files from R Markdown (do not forget to add figures and CSS style files as well), and push to the remote repository.</li>
+</ol>
+</div>
+<div id="related-publications" class="section level2">
+<h2>Related Publications</h2>
+<p>Santangelo JS (2019). Data simulation and randomization tests. NEON Faculty Mentoring Network, QUBES Educational Resources. <a href="doi:10.25334/Q4CT7P" class="uri">doi:10.25334/Q4CT7P</a>. <a href="https://qubeshub.org/qubesresources/publications/996/1">Available online.</a>.</p>
+<p>Bonsma-Fisher M, Hasan AR (2018). Working with plant phenology data and fitting a nonlinear model using least squares in R. NEON Faculty Mentoring Network, QUBES Educational Resources. <a href="doi:10.25334/Q4Q73D" class="uri">doi:10.25334/Q4Q73D</a>. <a href="https://qubeshub.org/qubesresources/publications/978/1">Available online</a>.</p>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2>Acknowledgements</h2>
+<p>We thank Dr. Christie Bahlai, Dr. Asher Cutter, Dr. Martin Krkosek, and the Department of Ecology and Evolutionary Biology at the University of Toronto for helping make this course a reality.</p>
+<p>We also thank Dr. Megan Jones and Dr. Kusum Naithani for their support and guidance, particularly around use of the NEON Ecological Observatory data.</p>
+</div>
+</div>
+
+
+<hr>
+
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. See the <a href="LICENSE.html">licensing</a> page for more details about copyright information.</p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
